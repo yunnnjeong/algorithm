@@ -1,16 +1,10 @@
 n = int(input())
-ropes = []
+r = [int(input()) for _ in range(n)]
+r.sort(reverse=True)
 
-for _ in range(n):
-    ropes.append(int(input()))
-
-ropes.sort(reverse=True)
-
-max_weight = 0
-
+m = 0
 for i in range(n):
+    w = r[i] * (i + 1)
+    m = max(m, w)
 
-    weight = ropes[i] * (i + 1)
-    max_weight = max(max_weight, weight)
-
-print(max_weight)
+print(m)
