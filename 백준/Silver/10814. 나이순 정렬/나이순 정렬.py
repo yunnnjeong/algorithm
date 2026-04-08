@@ -2,15 +2,12 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-m = []
-
+arr = []
 for i in range(n):
-    line = input().split()
-    age = int(line[0])
-    name = line[1]
-    m.append((age, name))
+    age, name = input().split()
+    arr.append((int(age), i, name))
 
-m.sort(key=lambda x: x[0])
+arr.sort(key=lambda x: x[0])
 
-for age, name in m:
+for age, i, name in arr:
     print(age, name)
